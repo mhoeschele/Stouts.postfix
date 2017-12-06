@@ -5,5 +5,5 @@
   notify: postfix send test mail
 
 - name: "postfix send test mail"
-  shell: echo "Test mail from new/updated postfix at" `hostname` | mail {{postfix_send_test_mail_to}} -s "Test SMTP `hostname`"
+  shell: echo "Test mail from new/updated postfix at" `hostname` | mail -s "Test SMTP `hostname`" {{postfix_send_test_mail_to}}
   when: postfix_send_test_mail_to != ""
